@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Function to generate multiplication table
+generate_table() {
+  local num=$1
+  local start=$2
+  local end=$3
+
+  echo "Multiplication Table for $num"
+  echo "=============================="
+
+  for ((i=start; i<=end; i++)); do
+    echo "$num x $i = $((num * i))"
+  done
+}
+
+# Prompt the user to enter a number
+read -p "Enter a number to generate its multiplication table: " num
+
+# Validate the user input
+if ! [[ "$num" =~ ^[0-9]+$ ]]; then
+  echo "Invalid input. Please enter a positive integer."
+  exit 1
+fi
+
+# Ask the user for their preference
+echo "Do you want to see the full multiplication table from 1 to 10 or a partial table within a range?"
+select choice in "Full Table" "Partial Table"; do
+  case $choice in
+    "Full Table")
+      generate_table $num 1 10
+      break
+      ;;
+    "Partial Table")
+      read -p "Enter the starting range: " start
+      read -p "Enter the ending range: " end
+
+      # Validate the range input
+      if ! [[ "$start" =~ ^[0-9]+$ ]] || ! [[ "$end" =~ ^[0-9]+$ ]] || [ "$start" -gt "$end" ]; then
+        echo "Invalid range. Please enter positive integers with start less than or equal to end."
+        exit 1
+      fi
+
+      generate_table $num $start $end
+      break
+      ;;
+    *)
+      echo "Invalid choice. Please select either 'Full Table' or 'Partial Table'."
+      ;;
+  esac
+done
