@@ -1,6 +1,6 @@
 # Capstone Project: Linux Shell Scripting
 
-## Multiplication Table Generator
+# Multiplication Table Generator
 
 This project contains a Bash script that generates a multiplication table for a user-specified number. The script allows the user to choose between viewing a full table (1 to 10) or a partial table within a custom range.
 
@@ -46,21 +46,19 @@ This project contains a Bash script that generates a multiplication table for a 
 
 ## Full table
 
-![]()![](./img/disply%20shell1.png)
+![]()![](./img/multi%20table.png)
 
 ## Partial Table
 
-![]()![](./img/multi%20partial.png)
+![]()![](./img/multi%20table%20partial.png)
 
 
 ## C-Style Table
 
 **Create script**
 
+
 ![]()![](./img/c-style.png)
-
-
-![]()![](./img/c-style%20code.png)
 
 **Make the Script Executable**
 
@@ -74,20 +72,20 @@ chmod +x c-style_multiplication-table
  ./c-style_multiplication-table 
 ```
 
-![]()![](./img/c-style%20display.png)
+![]()![](./img/ctyle-result.png)
 
 ## Invalid Range
 
-![]()![](./img/invalid%20range.png)
+![]()![](./img/multi%20invalid.png)
 
 - Add Shell scripts to the Git repository
 
-![]()![](./img/git%20add.png)
+  ``` git add . ```
 
 - Commit changes with descriptive message
 
-![]()![](./img/commit.png)
+  ``` git commit -m "Multi-table" ```
 
 - Push the code to Github repository
 
-![]()![](./img/push.png)
+  ``` git push origin main ```
